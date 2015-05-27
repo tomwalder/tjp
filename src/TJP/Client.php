@@ -10,11 +10,15 @@ class Client
 {
 
     /**
+     * SOAP client
+     *
      * @var null|\SoapClient
      */
     private $obj_soap_client = NULL;
 
     /**
+     * Build SOAP client on construct
+     *
      * @param $str_token
      */
     public function __construct($str_token)
@@ -33,6 +37,8 @@ class Client
     }
 
     /**
+     * Run a standard "to-from" (GetArrivalBoard) query
+     *
      * @param $str_from
      * @param null $str_to
      * @param int $int_offset
@@ -57,7 +63,14 @@ class Client
         return $obj_response;
     }
 
-
+    /**
+     * Run a "from-to" (GetDepartureBoard) query
+     *
+     * @param $str_from
+     * @param null $str_to
+     * @param int $int_offset
+     * @return mixed
+     */
     public function fromTo($str_from, $str_to = NULL, $int_offset = 0)
     {
         $arr_params = [
@@ -77,6 +90,12 @@ class Client
         return $obj_response;
     }
 
+    /**
+     * Get the details of a particular train service
+     *
+     * @param $str_service_id
+     * @return mixed
+     */
     public function serviceDetails($str_service_id)
     {
         $obj_response = $this->obj_soap_client->GetServiceDetails([
@@ -85,6 +104,15 @@ class Client
         return $obj_response;
     }
 
+    /**
+     * Pull some service details and do a little magic
+     *
+     * @param $str_service_id
+     * @param null $str_from
+     * @param null $str_to
+     * @return object
+     * @throws \Exception
+     */
     public function serviceDetailsExtra($str_service_id, $str_from = NULL, $str_to = NULL)
     {
         $obj_response = $this->serviceDetails($str_service_id);
