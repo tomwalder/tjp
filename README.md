@@ -6,3 +6,5 @@ Designed primarily for mobile and running on App Engine at http://tjptrains.apps
 
 ## Credits ##
 Uses the amazing free LDBWS, here: http://lite.realtime.nationalrail.co.uk/openldbws/
+
+For more details and to sign up, go here: http://www.nationalrail.co.uk/46391.aspx
