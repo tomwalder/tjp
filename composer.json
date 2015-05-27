@@ -1,0 +1,14 @@
+{
+    "name": "tomwalder/tjp",
+    "type": "application",
+    "description": "Tom's Journey Planner",
+    "keywords": ["trains", "ldbws"],
+    "homepage": "https://github.com/tomwalder/tjp",
+    "require": {
+    },
+    "autoload": {
+        "classmap": ["src/"],
+        "psr-4": {"TJP\\": "src/TJP/"}
+    },
+    "include-path": ["src/"]
+}

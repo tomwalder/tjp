@@ -1,0 +1,32 @@
+application: tjptrains
+version: alpha1
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+
+# Application static resources
+
+- url: /css
+  static_dir: public/css
+
+- url: /js
+  static_dir: public/js
+
+- url: /img
+  static_dir: public/img
+
+- url: /fonts
+  static_dir: public/fonts
+
+# Default handler
+
+- url: /data
+  script: public/data.php
+
+- url: /basic
+  script: public/basic.php
+
+- url: .*
+  script: public/main.php
